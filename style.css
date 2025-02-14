@@ -5,21 +5,17 @@ body {
     color: white;
     margin: 0;
     padding: 0;
-    position: relative;
     overflow: hidden;
 }
 
-/* Global styles for the page container */
 .page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    position: relative;
 }
 
-/* Button styling */
 button {
     background-color: #ff1493;
     color: white;
@@ -29,119 +25,61 @@ button {
     font-size: 18px;
     margin-top: 20px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #ff69b4;
 }
 
-/* Input field styling */
 input {
     padding: 10px;
     font-size: 16px;
     margin-top: 10px;
     border-radius: 5px;
-    border: none;
 }
 
-/* Poem container to position the text */
-#poem-container {
-    position: relative;
-    animation: fadeIn 3s ease;
-}
-
-/* Styling the poem text */
-#poem {
-    position: relative;
-    font-size: 24px;
-    line-height: 1.5;
-    z-index: 1;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Floating hearts */
-@keyframes float-hearts {
-    0% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(50px, -100px);
-        opacity: 0;
-    }
-}
-
-/* Styling the heart animation */
-.heart {
-    position: absolute;
-    font-size: 24px;
-    color: red;
-    animation: float-hearts 5s infinite;
-    z-index: 2;
-}
-
-/* Animating the "Next" button */
-#nextBtn {
-    font-size: 30px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #ff1493;
-    transition: color 0.3s ease;
-}
-
-#nextBtn:hover {
-    color: #ff69b4;
-}
-
-/* Animations for floating hearts in the background */
-@keyframes heartAnimation {
-    0% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(100px, -150px);
-        opacity: 0;
-    }
-}
-    /* Floating hearts for the entire page */
 .heart-bg {
     position: absolute;
-    font-size: 36px;
-    color: #ff1493;
-    opacity: 0.8;
-    animation: heartAnimation 8s infinite ease-in-out;
+    font-size: 2em;
+    animation: float 10s infinite;
 }
 
-/* Animation for floating hearts */
-@keyframes heartAnimation {
-    0% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(100px, -150px);
-        opacity: 0;
-    }
+.heart-bg:nth-child(1) {
+    left: 20%;
+    animation-duration: 8s;
 }
 
-}
-
-/* Floating hearts for the entire page */
-.heart-bg {
+.heart-bg:nth-child(2) {
     left: 50%;
-    animation-duration: 7s;
-    animation-delay: calc(-5s + 10s * random());
+    animation-duration: 9s;
 }
 
-@keyframes fadeIn {
+.heart-bg:nth-child(3) {
+    left: 30%;
+    animation-duration: 12s;
+}
+
+.heart-bg:nth-child(4) {
+    left: 70%;
+    animation-duration: 11s;
+}
+
+.heart-bg:nth-child(5) {
+    left: 10%;
+    animation-duration: 13s;
+}
+
+@keyframes float {
     0% {
-        opacity: 0;
+        top: 80%;
+        opacity: 1;
+    }
+    50% {
+        top: 50%;
+        opacity: 0.6;
     }
     100% {
+        top: 0;
         opacity: 1;
     }
 }
