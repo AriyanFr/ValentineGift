@@ -1,4 +1,3 @@
-// Start Journey Function
 function startJourney() {
     let name = document.getElementById('nameInput').value;
     if (name.trim() === "") {
@@ -7,6 +6,8 @@ function startJourney() {
     }
     document.getElementById('namePlaceholder').innerText = name;
     nextPage(2);
+}
+
 }
 
 // Function to switch between pages
