@@ -38,16 +38,25 @@ function playMusic() {
     music.play();
 }
 
+// JavaScript to create random floating hearts
 function createFloatingHearts() {
-    let heartContainer = document.getElementById('floatingHearts');
-    for (let i = 0; i < 20; i++) {
+    let numberOfHearts = 10; // Number of hearts to create
+    for (let i = 0; i < numberOfHearts; i++) {
         let heart = document.createElement('div');
-        heart.classList.add('floating-heart');
-        heart.innerHTML = '❤️';
-        heart.style.left = `${Math.random() * 100}%`;
-        heart.style.animationDuration = `${Math.random() * 5 + 8}s`; // Random duration
-        heart.style.fontSize = `${Math.random() * 30 + 25}px`;
-        heartContainer.appendChild(heart);
+        heart.classList.add('heart-bg');
+        heart.innerText = '❤️';
+        
+        // Randomize position and animation speed
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.animationDuration = (Math.random() * 4 + 6) + 's'; // Random duration between 6 and 10 seconds
+
+        document.body.appendChild(heart);
+    }
+}
+
+// Call the function to create hearts when the page loads
+window.onload = createFloatingHearts;
+
     }
 }
 
