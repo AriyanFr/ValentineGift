@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-scale=1.0">
+    <title>Valentine Surprise</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Audio Control: Play or Pause -->
+    <audio id="backgroundMusic" loop>
+        <source src="I-Wanna-Be-Yours-Arctic-Monkeys.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="page1" class="page fade-in">
+        <h1>Welcome, Love! 💖</h1>
+        <p>Enter your name to begin:</p>
+        <input type="text" id="nameInput" placeholder="Your Name">
+        <button onclick="startJourney()">Start</button>
+    </div>
+
+    <div id="page2" class="page fade-in" style="display: none;">
+        <h1>Hey <span id="namePlaceholder"></span>! ❤️</h1>
+        <button onclick="nextPage(3)">Next</button>
+    </div>
+
+    <div id="page3" class="page fade-in" style="display: none;">
+        <h1>A Poem for You ❤️</h1>
+        <div class="poem">
+            <p id="poem"></p>
+        </div>
+        <button id="nextButton" onclick="nextPage(4)" style="display: none;">
+            <span>&#8594;</span>
+        </button>
+    </div>
+
+    <div id="page4" class="page fade-in" style="display: none;">
+        <h1>I have a gift for you! 🎁</h1>
+        <button onclick="nextPage(5)">Open It</button>
+    </div>
+
+    <div id="page5" class="page fade-in" style="display: none;">
+        <h1>For You, My Love 💌</h1>
+        <p>
+            No words can express how much you mean to me. <br>
+            You are my happiness, my safe place, my everything. <br>
+            I am so lucky to have you in my life. 💕<br><br>
+            You brighten even the darkest days with your love. <br>
+            Every laugh, every smile shared with you, <br>
+            Makes my heart skip a beat. I love you endlessly. ❤️<br><br>
+            Here's to many more moments of love, joy, and laughter. <br>
+            I promise to always stand by you, forever and beyond. 💑
+        </p>
+    </div>
+
+    <div id="floatingHearts"></div>
+
+</body>
+</html>
