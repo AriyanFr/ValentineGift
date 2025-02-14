@@ -1,36 +1,66 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #220022;
-    color: white;
-    margin: 0;
-    padding: 0;
+function startJourney() {
+    let name = document.getElementById('nameInput').value;
+    if (name.trim() === "") {
+        alert("Please enter your name!");
+        return;
+    }
+    document.getElementById('namePlaceholder').innerText = name;
+    nextPage(2);
+    playMusic(); // Start background music when the journey begins
 }
 
-.page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+// Function to switch between pages
+function nextPage(pageNumber) {
+    document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+    document.getElementById(`page${pageNumber}`).style.display = 'flex';
 }
 
-button {
-    background-color: #ff1493;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    margin-top: 20px;
+// Simple game simulation (with smoother interaction)
+function startGame() {
+    let canvas = document.getElementById('gameCanvas');
+    let ctx = canvas.getContext('2d');
+
+    canvas.width = 400;
+    canvas.height = 300;
+
+    let heartX = 50, heartY = 100;
+    let enemyX = 250, enemyY = 100;
+    let speed = 10;
+
+    canvas.style.border = "2px solid white";
+
+    // Draw game elements
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw heart
+        ctx.fillStyle = "red";
+        ctx.beginPath();
+        ctx.arc(heartX, heartY, 20, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw enemy (Ego)
+        ctx.fillStyle = "black";
+        ctx.fillRect(enemyX, enemyY, 30, 30);
+
+        if (heartX >= enemyX) {
+            document.getElementById('gameMessage').innerText = "Yay! You defeated Ego! ❤️";
+            return;
+        }
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === "ArrowRight") {
+            heartX += speed;
+            draw();
+        }
+    });
+
+    draw();
 }
 
-button:hover {
-    background-color: #ff69b4;
+function playMusic() {
+    let music = document.getElementById('backgroundMusic');
+    music.play();
 }
 
-input {
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 10px;
-}
