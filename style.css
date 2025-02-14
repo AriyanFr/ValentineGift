@@ -1,1 +1,113 @@
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #220022;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Page container */
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* Button styling */
+button {
+    background-color: #ff1493;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #ff69b4;
+}
+
+/* Input styling */
+input {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Poem styling */
+#poem {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Music player styling */
+audio {
+    display: none;
+}
+
+/* Floating hearts animation */
+@keyframes floatHearts {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50px, -50px);
+        opacity: 0;
+    }
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 24px;
+    animation: floatHearts 5s infinite;
+    pointer-events: none;
+}
+
+.floating-heart:nth-child(odd) {
+    animation-duration: 6s;
+}
+
+.floating-heart:nth-child(even) {
+    animation-duration: 4s;
+}
+
+/* Flowers and hearts styling */
+#flower-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flower {
+    position: absolute;
+    font-size: 18px;
+    animation: floatHearts 5s infinite ease-in-out;
+}
+
+/* Arrow for the next button */
+.arrow {
+    font-size: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Arrow hover effect */
+.arrow:hover {
+    transform: scale(1.2);
+}
 
