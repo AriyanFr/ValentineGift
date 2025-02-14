@@ -1,1 +1,6 @@
+<!-- Music: I Wanna Be Yours -->
+<audio id="backgroundMusic" autoplay loop>
+    <source src="I-Wanna-Be-Yours.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
 
