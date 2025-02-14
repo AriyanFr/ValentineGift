@@ -1,4 +1,3 @@
-/* Body styling */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -6,10 +5,11 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    position: relative;
     overflow: hidden;
 }
 
-/* Page container */
+/* Global styles for the page container */
 .page {
     display: flex;
     flex-direction: column;
@@ -28,86 +28,106 @@ button {
     cursor: pointer;
     font-size: 18px;
     margin-top: 20px;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
 button:hover {
     background-color: #ff69b4;
 }
 
-/* Input styling */
+/* Input field styling */
 input {
     padding: 10px;
     font-size: 16px;
     margin-top: 10px;
-    border: none;
     border-radius: 5px;
+    border: none;
 }
 
-/* Poem styling */
+/* Poem container to position the text */
+#poem-container {
+    position: relative;
+    animation: fadeIn 3s ease;
+}
+
+/* Styling the poem text */
 #poem {
+    position: relative;
     font-size: 24px;
     line-height: 1.5;
-    margin-bottom: 20px;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Music player styling */
-audio {
-    display: none;
-}
-
-/* Floating hearts animation */
-@keyframes floatHearts {
+/* Floating hearts */
+@keyframes float-hearts {
     0% {
         transform: translate(0, 0);
         opacity: 1;
     }
     100% {
-        transform: translate(-50px, -50px);
+        transform: translate(50px, -100px);
         opacity: 0;
     }
 }
 
-.floating-heart {
+/* Styling the heart animation */
+.heart {
     position: absolute;
     font-size: 24px;
-    animation: floatHearts 5s infinite;
-    pointer-events: none;
+    color: red;
+    animation: float-hearts 5s infinite;
+    z-index: 2;
 }
 
-.floating-heart:nth-child(odd) {
-    animation-duration: 6s;
-}
-
-.floating-heart:nth-child(even) {
-    animation-duration: 4s;
-}
-
-/* Flowers and hearts styling */
-#flower-container {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.flower {
-    position: absolute;
-    font-size: 18px;
-    animation: floatHearts 5s infinite ease-in-out;
-}
-
-/* Arrow for the next button */
-.arrow {
+/* Animating the "Next" button */
+#nextBtn {
     font-size: 30px;
-    margin-top: 20px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    background: none;
+    border: none;
+    color: #ff1493;
+    transition: color 0.3s ease;
 }
 
-/* Arrow hover effect */
-.arrow:hover {
-    transform: scale(1.2);
+#nextBtn:hover {
+    color: #ff69b4;
 }
 
+/* Animations for floating hearts in the background */
+@keyframes heartAnimation {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100px, -150px);
+        opacity: 0;
+    }
+}
+
+.heart-bg {
+    position: absolute;
+    font-size: 36px;
+    color: #ff1493;
+    opacity: 0.8;
+    animation: heartAnimation 8s infinite ease-in-out;
+}
+
+/* Floating hearts for the entire page */
+.heart-bg {
+    left: 50%;
+    animation-duration: 7s;
+    animation-delay: calc(-5s + 10s * random());
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
