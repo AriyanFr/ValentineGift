@@ -9,21 +9,25 @@
 </head>
 <body>
 
-    <div id="page1" class="page">
+    <audio id="backgroundMusic" loop>
+        <source src="I-Wanna-Be-Yours-Arctic-Monkeys.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="page1" class="page fade-in">
         <h1>Welcome, Love! 💖</h1>
         <p>Enter your name to begin:</p>
         <input type="text" id="nameInput" placeholder="Your Name">
         <button onclick="startJourney()">Start</button>
     </div>
 
-    <div id="page2" class="page" style="display: none;">
+    <div id="page2" class="page fade-in" style="display: none;">
         <h1>Hey <span id="namePlaceholder"></span>, I made a game for you! 🎮</h1>
         <canvas id="gameCanvas"></canvas>
         <p id="gameMessage"></p>
         <button onclick="nextPage(3)">Next</button>
     </div>
 
-    <div id="page3" class="page" style="display: none;">
+    <div id="page3" class="page fade-in" style="display: none;">
         <h1>A Poem for You ❤️</h1>
         <p id="poem">
             Like the moon lights up the dark, <br>
@@ -34,12 +38,12 @@
         <button onclick="nextPage(4)">Next</button>
     </div>
 
-    <div id="page4" class="page" style="display: none;">
+    <div id="page4" class="page fade-in" style="display: none;">
         <h1>I have a gift for you! 🎁</h1>
         <button onclick="nextPage(5)">Open It</button>
     </div>
 
-    <div id="page5" class="page" style="display: none;">
+    <div id="page5" class="page fade-in" style="display: none;">
         <h1>For You, My Love 💌</h1>
         <p>
             No words can express how much you mean to me. <br>
@@ -50,3 +54,4 @@
 
 </body>
 </html>
+
