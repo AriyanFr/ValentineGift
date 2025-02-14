@@ -1,65 +1,43 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #2a0036;
-    color: white;
-    margin: 0;
-    padding: 0;
-    background-image: url('hearts-flowers.png');  /* Add hearts and flowers image */
-    background-size: cover;
-    background-position: center;
-    animation: fadeInBackground 3s ease-out;
+function startJourney() {
+    let name = document.getElementById('nameInput').value;
+    if (name.trim() === "") {
+        alert("Please enter your name!");
+        return;
+    }
+    document.getElementById('namePlaceholder').innerText = name;
+    nextPage(2);
+    playMusic(); // Start background music when the journey begins
+    createFloatingHearts(); // Start floating hearts effect
 }
 
-.page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    opacity: 0;
-    transition: opacity 1s ease;
+// Function to switch between pages
+function nextPage(pageNumber) {
+    document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+    document.getElementById(`page${pageNumber}`).style.display = 'flex';
+
+    if (pageNumber === 3) {
+        setTimeout(() => {
+            document.getElementById('nextButton').style.display = 'inline-block'; // Show Next button after 4-5 seconds
+        }, 4000); // 4-second delay for showing the Next button
+    }
 }
 
-button {
-    background-color: #ff1493;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    margin-top: 20px;
-    transition: transform 0.2s;
+// Start background music
+function playMusic() {
+    let music = document.getElementById('backgroundMusic');
+    music.play();
 }
 
-button:hover {
-    background-color: #ff69b4;
-    transform: scale(1.1);
+// Floating hearts effect
+function createFloatingHearts() {
+    let heartContainer = document.getElementById('floatingHearts');
+    for (let i = 0; i < 20; i++) {
+        let heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.innerHTML = '❤️';
+        heart.style.left = `${Math.random() * 100}%`;
+        heart.style.animationDuration = `${Math.random() * 5 + 8}s`; // Random animation speed between 8s and 13s
+        heart.style.fontSize = `${Math.random() * 30 + 25}px`; // Random size for variety
+        heartContainer.appendChild(heart);
+    }
 }
-
-input {
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 10px;
-    border-radius: 5px;
-    transition: border-color 0.3s;
-}
-
-input:focus {
-    border-color: #ff1493;
-}
-
-.fade-in {
-    animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInBackground {
-    0% { background-color: #2a0036; }
-    100% { background-color: #3c0041; }
-}
-
