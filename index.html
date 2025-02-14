@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Surprise</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="page1" class="page">
+        <h1>Welcome, Love! 💖</h1>
+        <p>Enter your name to begin:</p>
+        <input type="text" id="nameInput" placeholder="Your Name">
+        <button onclick="startJourney()">Start</button>
+    </div>
+
+    <div id="page2" class="page" style="display: none;">
+        <h1>Hey <span id="namePlaceholder"></span>, I made a game for you! 🎮</h1>
+        <canvas id="gameCanvas"></canvas>
+        <p id="gameMessage"></p>
+        <button onclick="nextPage(3)">Next</button>
+    </div>
+
+    <div id="page3" class="page" style="display: none;">
+        <h1>A Poem for You ❤️</h1>
+        <p id="poem">
+            Like the moon lights up the dark, <br>
+            You fill my life with a spark. <br>
+            Every moment feels so right, <br>
+            With you, my world is bright. ✨
+        </p>
+        <button onclick="nextPage(4)">Next</button>
+    </div>
+
+    <div id="page4" class="page" style="display: none;">
+        <h1>I have a gift for you! 🎁</h1>
+        <button onclick="nextPage(5)">Open It</button>
+    </div>
+
+    <div id="page5" class="page" style="display: none;">
+        <h1>For You, My Love 💌</h1>
+        <p>
+            No words can express how much you mean to me. <br>
+            You are my happiness, my safe place, my everything. <br>
+            I am so lucky to have you in my life. 💕
+        </p>
+    </div>
+
+</body>
+</html>
