@@ -8,21 +8,6 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-
-    <!-- Music: I Wanna Be Yours -->
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="I-Wanna-Be-Yours.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-
-    <!-- Floating Hearts -->
-    <div class="heart-bg">❤️</div>
-    <div class="heart-bg">❤️</div>
-    <div class="heart-bg">❤️</div>
-    <div class="heart-bg">❤️</div>
-    <div class="heart-bg">❤️</div>
-
-    <!-- Page 1 - Name Entry -->
     <div id="page1" class="page">
         <h1>Welcome, Love! 💖</h1>
         <p>Enter your name to begin:</p>
@@ -30,48 +15,38 @@
         <button onclick="startJourney()">Start</button>
     </div>
 
-    <!-- Page 2 - Game -->
     <div id="page2" class="page" style="display: none;">
         <h1>Hey <span id="namePlaceholder"></span>, I made a game for you! 🎮</h1>
-        <canvas id="gameCanvas"></canvas>
-        <p id="gameMessage"></p>
         <button onclick="nextPage(3)">Next</button>
     </div>
 
-    <!-- Page 3 - Poem -->
     <div id="page3" class="page" style="display: none;">
         <h1>A Poem for You ❤️</h1>
         <p id="poem">
             Like the moon lights up the dark, <br>
             You fill my life with a spark. <br>
             Every moment feels so right, <br>
-            With you, my world is bright. ✨ <br><br>
-            Love is a melody, so sweet and pure, <br>
-            With you, forever feels so sure. <br>
-            Every second, my heart beats for you, <br>
-            Together, our love will always be true. ❤️
+            With you, my world is bright. ✨
         </p>
         <button onclick="nextPage(4)">Next</button>
     </div>
 
-    <!-- Page 4 - Gift Reveal (Updated to Letter) -->
     <div id="page4" class="page" style="display: none;">
-        <h1>Here is a letter for you! ✉️</h1>
-        <button onclick="nextPage(5)">Read it</button>
+        <h1>A letter for you 💌</h1>
+        <p>
+            My love, <br>
+            You are my sunshine, the light that brightens my darkest days. Every moment spent with you feels like a beautiful dream. I am grateful for your love, and I will cherish it forever. Thank you for being my everything. 💖
+        </p>
+        <button onclick="nextPage(5)">Next</button>
     </div>
 
-    <!-- Page 5 - Final Paragraph (Updated letter) -->
     <div id="page5" class="page" style="display: none;">
         <h1>For You, My Love 💌</h1>
         <p>
-            My Dearest, <br><br>
-            Words can hardly describe how much you mean to me. From the moment I met you, my world has been filled with joy and purpose. You make every day brighter, and I am truly grateful to have you by my side. 💖<br><br>
-            You are my happiness, my rock, and my safe place. Your smile lights up my life, and your love gives me strength like I’ve never known before. When I'm with you, I feel like I’m home. <br><br>
-            I want to cherish every moment with you, share laughter, and create beautiful memories together. There is no one else I’d rather spend my days with. Every time I think of you, my heart beats faster, knowing that you're mine. ❤️<br><br>
-            As we move forward together, I want you to know that I will always be here for you. Through thick and thin, I will support you, love you, and be your biggest cheerleader. <br><br>
-            Thank you for being the most incredible person in my life. I love you more than words could ever express. Forever and always. 💕
+            No words can express how much you mean to me. <br>
+            You are my happiness, my safe place, my everything. <br>
+            I am so lucky to have you in my life. 💕
         </p>
     </div>
-
 </body>
 </html>
